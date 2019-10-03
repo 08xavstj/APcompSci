@@ -11,8 +11,11 @@ public class Exercise_5 {
         System.out.print("How long do you want your bar?: ");
         Double num = input.nextDouble();
         
-        for (int i = 0; i <= num; i++) {
-            
+         for ( int i = 1; i <= num; i++){ 
+         for ( int k = 1 ; k <= i; k++) {
+             System.out.print(key);
+            }
+            System.out.println("");
         }
         
         System.out.println("");
