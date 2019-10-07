@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Exercise_1
+comment1.params=animal\ sound
+comment1.target=void\ verse(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ singOldMacdonald()
+numComments=3
