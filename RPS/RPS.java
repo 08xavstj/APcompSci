@@ -1,36 +1,59 @@
 import java.util.Scanner;
 public class RPS {
     public static void main(String[] args) {
-        final int r = 1;
-        final int p = 2;
-        final int s = 3;
+        Scanner sc = new Scanner(System.in);
 
         String ans = "y";
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("I challenge you to RPS");
+        System.out.println("I challenge you to RPS!");
         System.out.println("");
 
-        while (ans.equals("y")) {
-            game();
-            System.out.print("Again [y/n]");
+        while(ans.equals("y")) {
+            RPS();
+            System.out.println("Again? [y/n]");
             ans = sc.nextLine();
-            System.out.println("");
         }
     }
-    
-    public static void game() {
-    
-        
+
+    public static void RPS() {
         Scanner sc = new Scanner(System.in);
-        
-        System.out.println("What do you throw? [1] Rock - [2] Paper - [3] Scissorcs");
-        int thrw = sc.nextInt();
-        
-              
-        if (thrw == 1) {
-            System.out.println("You Threw Rock, I Threw Paper");
-            loss++;
+       
+        int w = 0;
+        int l = 0;
+        int t = 0;
+       
+        int rand = 0;
+        rand = (int) (Math.random()*3)+1;
+
+        System.out.print("What do you throw? [1] Rock, [2] Paper, [3] Scissors?");
+        int pick = sc.nextInt();
+        System.out.println("");
+        if (pick == rand) {
+            System.out.println("TIE?!");
+            t++;
+        } else if (pick == 1 && rand == 2) {
+            System.out.println("you threw Rock and I threw Paper. I AM VICTORIOUS");
+            l++;
+        } else if (pick == 1 && rand == 3) {
+            System.out.println("you threw Rock and I threw Scissors. You may have won");
+            w++;
+        } else if (pick == 2 && rand == 1) {
+            System.out.println("you threw Paper and I threw Rock. :'(");
+            w++;
+        } else if (pick == 2 && rand == 3) {
+            System.out.println("you threw Paper and I threw Scissors. Get sliced");
+            l++;
+        } else if (pick == 3 && rand == 1) {
+            System.out.println("you threw Scissors and I threw Rock. Get Crushed Nerd");
+            l++;
+        } else if (pick == 3 && rand == 2) {
+            System.out.println("you threw Scissors and I threw Paper. '...'");
+            w++;
+        } else {
+            System.out.println("you cant throw that");
         }
+        System.out.println("Wins: " + w);
+        System.out.println("Ties: " + t);
+        System.out.println("Losses: " + l);
     }
 }
