@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class RPS {
+    public static int w = 0, l = 0, t = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -18,9 +19,6 @@ public class RPS {
     public static void RPS() {
         Scanner sc = new Scanner(System.in);
        
-        int w = 0;
-        int l = 0;
-        int t = 0;
        
         int rand = 0;
         rand = (int) (Math.random()*3)+1;
