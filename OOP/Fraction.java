@@ -5,7 +5,7 @@ class Fraction {
         this.a = 0;
         this.b = 1;
     }
-    
+
     public Fraction(int x,int y) {
         this.a = a;
         if (b == 0) {
@@ -15,7 +15,7 @@ class Fraction {
             this.b = b;
         }
     }
-    
+
     public Fraction(String f) {
         int str = f.indexOf("/");
         String num = f.substring(0,str);
@@ -27,9 +27,39 @@ class Fraction {
             this.b = Integer.parseInt(den);
         }
     }
-    
+
     public Fraction(Fraction f) {
         this.a = f.a;
         this.b = f.b;
     }
+
+    public int getA() {
+        return this.a;
+    }
+
+    public int getB() {
+        return this.b;
+    }
+
+    public String toString() {
+        return a+"/"+b;
+    }
+
+    public double toDouble() {
+        return a/b;
+    }
+
+    public void reduce() {
+     
+    }
+    
+    public void setNum() {
+        
+    }
+    
+    public void setDen() {
+        
+    }
+    
+    
 }
