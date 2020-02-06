@@ -20,12 +20,14 @@ public class Puzzle {
         return true;
     }  
 
-    public Boolean makeGuess(String guess) {
-        if (guess == word) {
-            return true;
-        } else {
-            return false;
+    public Boolean makeGuess(String letter) {
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            if (letter.equals(ch)) {
+                return true;
+            } 
         }
+        return false;
     }
 
     public String getWord() {

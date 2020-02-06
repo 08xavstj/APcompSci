@@ -53,9 +53,13 @@ public class HangingMan {
     }
 
     public Boolean isntDead() {
-        return true;  
+        if (numWrongGuesses <= 6) {
+            return true;  
+        } else {
+            return false;
+        }
     }
-    
+
     public String dieSomeMore() {
         numWrongGuesses++;
         return HangmanImage[numWrongGuesses];
