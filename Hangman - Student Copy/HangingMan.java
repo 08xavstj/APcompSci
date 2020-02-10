@@ -44,12 +44,10 @@ public class HangingMan {
             "/\\\n",
         };
 
-    public HangingMan() {
 
-    }
 
-    public static void show() {
-
+    public void show() {
+        System.out.print(HangmanImage[numWrongGuesses]);
     }
 
     public Boolean isntDead() {
@@ -60,8 +58,7 @@ public class HangingMan {
         }
     }
 
-    public String dieSomeMore() {
+    public void dieSomeMore() {
         numWrongGuesses++;
-        return HangmanImage[numWrongGuesses];
     }
 }
