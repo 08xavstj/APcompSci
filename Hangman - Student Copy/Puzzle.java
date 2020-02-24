@@ -4,12 +4,33 @@ import java.io.File;
 import java.io.FileNotFoundException;
 public class Puzzle {
     private String word;
-    private int l, amntGuessed = 0;
+    private final int maxWords = 45403;
+    private int l;
+    private int amntGuessed = 0;
     private String guesses = "";
-    private ArrayList<String> screenWord = new ArrayList<String>();
+    public ArrayList<String> screenWord = new ArrayList<String>();
+    ArrayList<String> words;
+    
     public Puzzle() {
-        word = "Kitty";
-        word = word.toUpperCase();
+        
+         words = new ArrayList<String>();
+
+        try {
+            File file = new File("words.txt");
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNext()) {
+                String tempWord = scanner.next().toUpperCase();
+                words.add(tempWord);
+            }
+            scanner.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        word = words.get((int)(Math.random()*words.size()));
+        
+        
         l = word.length();
         for (int i = 0; i < l; i++) {
             screenWord.add("_ ");
@@ -20,7 +41,7 @@ public class Puzzle {
         for (int i = 0; i < screenWord.size(); i++) {
             System.out.print(screenWord.get(i));
         }
-        
+
         System.out.print("");
         System.out.print("Guesses: ");
         System.out.print(guesses+ "\n");
@@ -39,7 +60,7 @@ public class Puzzle {
     public Boolean makeGuess(String letter) {
         guesses = (guesses + letter + " ");
         boolean working = false;
-        for (int i = 0; i < l; i++) {
+        for (int i = 0; i < l; i++) {             
             if (letter.equals(word.substring(i, i+1))) {
                 working = true;
                 screenWord.set(i, (letter + " "));

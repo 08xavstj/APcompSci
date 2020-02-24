@@ -13,6 +13,7 @@ public class HangmanGame {
             System.out.print("\nMake a guess: ");
             String guess = scanner.nextLine();
             guess = guess.toUpperCase();
+            
             if (!puzzle.makeGuess(guess)) { 
                 hangingMan.dieSomeMore();
             }
@@ -20,7 +21,7 @@ public class HangmanGame {
         }
         
         if (hangingMan.isntDead()) {
-            System.out.println("You win!");
+            System.out.println("You win!" + puzzle.getWord());
         } else {
             System.out.println("You lose! The word was " + puzzle.getWord());
         }
@@ -28,8 +29,6 @@ public class HangmanGame {
     
     public static void clearScreen() {
         System.out.println("\f");
-    }
-    
-    
+    }   
 }
 

@@ -45,7 +45,6 @@ public class HangingMan {
         };
 
 
-
     public void show() {
         System.out.print(HangmanImage[numWrongGuesses]);
     }
@@ -53,9 +52,8 @@ public class HangingMan {
     public Boolean isntDead() {
         if (numWrongGuesses <= 6) {
             return true;  
-        } else {
-            return false;
-        }
+        } 
+        return false;
     }
 
     public void dieSomeMore() {
